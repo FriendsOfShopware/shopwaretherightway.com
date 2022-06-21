@@ -29,6 +29,8 @@ This does affect many things like:
 - Database Tables/Columns
 - DAL Fields/Associations
 - Theme Config Variables
+- Admin Mixin/Component/Module
+- Storefront JS Plugin
 
 
 {{< hint info >}}
