@@ -1,0 +1,18 @@
+baseURL = 'https://shopwaretherightway.com/'
+title = 'Shopware The Right Way'
+enableGitInfo = true
+
+[menu]
+[[menu.after]]
+  name = "FriendsOfShopware"
+  url = "https://github.com/FriendsOfShopware"
+  weight = 10
+
+[params]
+  BookTheme = 'auto'
+  BookRepo = 'https://github.com/FriendsOfShopware/shopwaretherightway.com'
+  BookEditPath = 'edit/main'
+
+[module]
+[[module.imports]]
+path = 'github.com/alex-shpak/hugo-book'
