@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Nameing
+title: Naming
 hidden: true
 ---
 
