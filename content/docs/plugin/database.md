@@ -9,6 +9,11 @@ hidden: true
 All tables or columns created by you should contain your plugin prefix and should be dropped after uninstallation.
 All columns except indexing fields for the DAL should be created in an own table to ensure migrations are fast executed on a larger data set.
 
+{{< hint info >}}
+In your own tables you have not prefixed all columns
+{{< /hint >}}
+
+
 ## Expensive migrations
 
 Expensive migrations should be avoided, as this migration could run into a timeout. An example migration could be
