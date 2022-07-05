@@ -191,3 +191,9 @@ $fs->read('file.jpg'); // returns data
 {{< hint warning >}}
 When you use the global file system, make sure you write in a custom directory and is prefixed with your extension name.
 {{< /hint >}}
+
+## Temporary files
+
+Sometimes you need in your code temporary files to, the temporary files should be always created in the system temp directory ([sys_get_temp_dir](https://www.php.net/manual/en/function.sys-get-temp-dir.php)). 
+If the temporary file has to be **existent between multiple requests**, you should prefer to use the private file system to be compatible on cluster systems. 
+In both cases, the code should delete the temporary file after usage.
