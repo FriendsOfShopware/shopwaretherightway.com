@@ -34,13 +34,9 @@ By using createDefaultContext the default language and default currency will be 
 {{< /hint >}}
 
 
-### SalesChanelContext
+### SalesChannelContext
 
 A `SalesChannelContext` can be created using service `Shopware\Core\System\SalesChannel\Context\SalesChannelContextFactory`. 
 Inject it into your class and call the `create` function with an random generated token (normally the user session id) and the salesChannelId.
 
 With the third `$options` you can override the logged in user, the used language, the currency and more.
-
-
-
-
