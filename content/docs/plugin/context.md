@@ -25,13 +25,26 @@ $salesChannelContext = $request->attributes->get(PlatformRequest::ATTRIBUTE_SALE
 
 ## Creating a Context
 
-## Context
+### Context
 
 The normal `Context` can be created using `Context::createDefaultContext`
 
 {{< hint info >}}
-By using createDefaultContext the default language and default currency will be used
+By using createDefaultContext the default language and default currency will be used.
 {{< /hint >}}
+
+The given language inside the Context will be used for all default translations. When the default language differs from the context language, the default translation has to be given in the translations array. Example
+
+```json
+{
+    "name": "Context Language",
+    "translations": {
+        "LANGUAGE-ID": {
+            "name": "Language Translation"
+        }
+    }
+}
+```
 
 
 ### SalesChannelContext
@@ -40,3 +53,27 @@ A `SalesChannelContext` can be created using service `Shopware\Core\System\Sales
 Inject it into your class and call the `create` function with an random generated token (normally the user session id) and the salesChannelId.
 
 With the third `$options` you can override the logged in user, the used language, the currency and more.
+
+### API
+
+In the API the Context can be controlled using the `sw-language-id` and `sw-currency-id` header.
+
+```http
+GET /api/search/product
+sw-language-id: my-language-id
+```
+
+All content will be in the translated property in that language.
+
+```json
+{
+    "data": [
+        {
+            "id": "my-product-id",
+            "translated": {
+                "name": "My Product"
+            }
+        }
+    ]
+}
+```
